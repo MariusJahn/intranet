@@ -1,0 +1,26 @@
+<footer class="container-outer footer" fxLayout="row" fxLayoutAlign="space-between center" fxLayout.lt-sm="column" fxLayoutAlign.ls-sm="space-between stretch" >
+  <!-- fxLayout.lt-sm="column" wenn Fenster kleiner wird, beide <divs> übereinander statt nebeneinander -->
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <button mat-button class="footer-button">
+      <a class="footer-link" [routerLink]="['']" routerLinkActive="router-link-active"> Home </a>
+    </button>
+    <button mat-button class="footer-button">
+      <a class="footer-link" [routerLink]="['/impressum']" routerLinkActive="router-link-active"> Impressum </a> <!-- Pfad zum Impressum anpassen [routerLink]="[/impressum]" -->
+    </button>
+    <button mat-button class="footer-button">
+      <a class="footer-link" [routerLink]="['/datenschutzerklaerung']" routerLinkActive="router-link-active"> Datenschutzerklärung </a> <!-- Pfad zum Impressum anpassen [routerLink]="[/datenschutzerklärung]" -->
+    </button>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button class="footer-button">
+      <a class="footer-link" href="https://de-de.facebook.com/FeuerwehrGelsenkirchen/" target="_blank" >Facebook</a>
+    </button>
+    <button mat-button class="footer-button">
+        <a class="footer-link" href="https://www.instagram.com/feuerwehrgelsenkirchen/" target="_blank" >Instagram</a>
+    </button>
+    <button mat-button class="footer-button">
+      <a class="footer-link" href="https://twitter.com/FWGelsenkirchen/" target="_blank"> Twitter </a>
+    </button>
+  </div>
+</footer>
+

@@ -1,0 +1,14 @@
+<!-- Wenn  NICHT angemeldet LoginComponent in Sidebar -->
+<div class="login" *ngIf="isLoggedIn == false">
+  <p class="login__title">Anmelden</p>
+  <input class="login__input" (keyup.enter)="loginUser()" [(ngModel)]="username" id="username" name="username" type="text" placeholder="Nutzername">
+  <input class="login__input" (keyup.enter)="loginUser()"  [(ngModel)]="password" id="password" name="password" type="password" placeholder="Passwort">
+  <button class="login__submit" type="submit" value="Submit" (click)="loginUser()">Login!</button>
+</div>
+
+<!-- Wenn angemeldet LoginComponent in Sidebar -->
+<div class="login" *ngIf="isLoggedIn == true">
+  <p>Willkommen {{usernameString}} !</p>
+  <button class="logout__submit" type="submit" value="Submit" (click)="logoutUser()">Abmelden!</button>
+</div>
+

@@ -1,0 +1,58 @@
+<h1>Dokument bearbeiten</h1>
+<form (submit)="editDocument($event)">
+
+    <!-- Titel -->
+    <div >
+      <mat-form-field class="category-field" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="data.title" name="title" id="title" readonly>
+      </mat-form-field><br>
+    </div>
+
+    <!-- Gültigkeit -->
+    <div>
+      <mat-form-field class="category-field" appearance="outline">
+        <mat-label>Gültigkeit</mat-label>
+        <select matNativeControl [(ngModel)]="data.validity" name="validity" id="validity">
+          <option value="gültig">gültig</option>
+          <option value="ungültig">ungültig</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+
+  <div>
+    <!-- Vorgänger anzeigen/ändern -->
+    <div class="parent-container">
+      <mat-form-field>
+        <mat-select [disableOptionCentering]="true" #select1 [(ngModel)]="data.parent" name="parent" size="5" placeholder="Vorgänger">
+          <mat-select-filter *ngIf="select1.focused" [color]="'#424242'" [array]="this.data.titles" (filteredReturn)="filteredList =$event"></mat-select-filter>
+            <mat-option *ngFor="let title of filteredList" [value]="title">
+              {{title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- Vorgänger löschen -->
+    <div class="parent-button-container">
+      <button matTooltip="Vorgänger löschen" [matTooltipPosition]="tooltipPosition" type="button"mat-icon-button (click)="deleteParent()">
+        <mat-icon class="action-icon">delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <br>
+
+
+
+  <div class="button-row">
+    <!-- Bestätigen -->
+    <button class="button-wrapper" type="submit" mat-raised-button color="primary" type="submit">Bestätigen</button>
+    <!-- Abbrechen -->
+    <button class="cancle-btn" type="button" mat-raised-button mat-dialog-close (click)="leaveEditMode()">Abbrechen</button>
+  </div>
+
+
+
+</form>
+

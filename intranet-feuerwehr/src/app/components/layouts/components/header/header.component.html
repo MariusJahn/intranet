@@ -1,0 +1,30 @@
+<header class="app-header">
+  <div class="app-header-elements">
+    <div class="logo-hastag-container">
+      <a [routerLink]="['']" routerLinkActive="router-link-active">
+        <img class="header-logo" src="assets/img/fwge-rot-blau.jpg">
+      </a>
+    </div>
+
+    <a *ngIf="!showContainer">
+      <!-- Adminkontrolle einbauen für Buttons sowie AuthGuard für Route-->
+      <button class="manage-documents-button" *ngIf="isAuthenticated" [routerLink]="['user/filesystem']" type="submit" value="Submit" >Dokumente</button>
+      <button class="manage-user-button" *ngIf="isAdmin" [routerLink]="['user/user-table']" routerLinkActive="router-link-active">Benutzer</button>
+      <button class="newsfeed-button" [routerLink]="['']" type="submit" value="Submit">News</button>
+    </a>
+
+    <div class="burger-menue-container" *ngIf="showContainer">
+        <button mat-button class="menu-button" (click)="menuOpen()">
+        <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="burger-menue-linklist-container" *ngIf="isMenuOpen && showContainer">
+  <div class="burger-menue-linklist">
+    <a class="burger-menue-link" *ngIf="isAuthenticated" [routerLink]="['user/filesystem']" type="submit" value="Submit" (click)="menuOpen()">Dokumente</a>
+    <a class="burger-menue-link"  *ngIf="isAdmin" [routerLink]="['user/user-table']" routerLinkActive="router-link-active" (click)="menuOpen()">Benutzer</a>
+    <a class="last-burger-menue-link" [routerLink]="['']" type="submit" value="Submit" (click)="menuOpen()">News</a>
+  </div>
+</div>

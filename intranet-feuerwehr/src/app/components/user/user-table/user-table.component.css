@@ -1,0 +1,109 @@
+.user {
+  background-color: white;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  padding: 38px 60px 40px 60px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.user__title {
+  height: 100%;
+  width: 100%;
+
+  color: #656565;
+  font-size: 25px;
+}
+
+.space_left {
+  margin-left: 20px;
+}
+
+.user-overview {
+  border-radius: 5px;
+  height: 100%;
+}
+
+.user-options {
+  margin-top: 38px;
+}
+
+table {
+  width: 100%;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #e5e5e5;
+}
+
+.mat-table {
+  overflow:hidden !important; /*Round corners*/
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+}
+
+.mat-paginator-container {
+  border-radius: 5px;
+}
+
+.user-table-container {
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  border-radius: 5px;
+  border: 2px solid #e6e6e6;
+}
+
+table tr:last-child td /*To remove the last border*/
+{
+  border-bottom:0 solid
+}
+
+.mat-paginator {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+}
+
+.user__button {
+  background-color: #1abc9c;
+  box-shadow: 0 3px 5px 0 rgba(15, 22, 33, 0.2);
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.user__button:hover {
+  background-color: #14947b;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.add-user-icon {
+  line-height: 20px;
+}
+
+.edit-user-icon {
+  color: #4C4F4E;
+}
+
+.button-wrapper--icon {
+  position: absolute;
+  padding-right: 10px;
+}
+
+.button-wrapper--text {
+  margin-left: 30px;
+}
+
+.search-form-field {
+  width: 30%;
+  margin-left: 20px;
+  border-radius: 5px;
+  right: 20px;
+  align-content: end;
+}
+

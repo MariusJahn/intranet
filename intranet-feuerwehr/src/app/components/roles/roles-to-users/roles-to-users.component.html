@@ -1,0 +1,50 @@
+<div class="frame">
+  <p class="title">Rolle zuweisen von {{name}} {{lastname}}</p>
+
+  <div class="roles-overview">
+    <div class="roles-table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort  >
+
+        <!-- Rolle -->
+        <ng-container matColumnDef="checked" >
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let role ">
+            <mat-checkbox name="checked" [ngModel]="actualRoles.get(role.roleID)" (ngModelChange)="toggle(role.roleID)"></mat-checkbox></td>
+        </ng-container>
+
+        <!-- Name Spalte -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Rolle </th>
+          <td mat-cell *matCellDef="let role">
+            {{role.name}}
+          </td>
+        </ng-container>
+
+        <!-- Beschreibung Spalte -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Beschreibung </th>
+          <td mat-cell *matCellDef="let role">
+            {{role.description}}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let right; columns: displayedColumns;"></tr>
+
+      </table>
+    </div>
+  </div>
+
+  <div class="options">
+
+    <button class="save-button" style="grid-column: 2" type="submit" (click)="save()">
+      <div class="button-wrapper--icon"> <mat-icon class="add-user-icon">done</mat-icon></div>
+      <div class="button-wrapper--text"> Speichern </div>
+    </button>
+    <button class="save-button" style="grid-column: 3" [routerLink]="['/user/user-table']" type="submit" value="Submit" >
+      <div class="button-wrapper--icon"> <mat-icon class="add-user-icon">cancel</mat-icon></div>
+      <div class="button-wrapper--text"> Abbrechen </div>
+    </button>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+.page-not-found {
+  color: #656565;
+  font-size: 25px;
+  margin-bottom: 50px;
+  position: center;
+}
+
+.page-not-found-container {
+  background-color: white;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  padding: 38px 60px 40px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 300px;
+}
+
+.image-page-not-found {
+  max-width: 500px;
+  position: center;
+}

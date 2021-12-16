@@ -1,0 +1,46 @@
+<div>
+  <h1>Eintrag bearbeiten</h1>
+</div>
+<br>
+
+<form class="newsfeed-editor-container" *ngIf="newsfeedRight" (ngSubmit)="confirm()">
+  <mat-form-field appearance="outline">
+    <mat-label>Titel</mat-label>
+    <textarea name="textbox-title" [(ngModel)]="data.Titel"  matInput placeholder="Titel einfügen"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Kurzer Eintrag</mat-label>
+    <textarea name="textbox-shortEntry" rows="5" maxlength="500" #input [(ngModel)]="data.Beschreibung" matInput placeholder="Kurzen Eintrag für den Newsfeed eingeben"></textarea>
+    <mat-hint align="end">{{input.value?.length || 0}}/500 Zeichen für den Eintrag.</mat-hint>
+  </mat-form-field>
+  <br>
+  <section class="checkbox">
+    <mat-checkbox class="example-margin" name="howWholeEntry" [(ngModel)]="data.ShowWholeEntry">Ganzen Eintrag auf seperater Seite anzeigen.</mat-checkbox>
+  </section>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Ganzer Eintrag</mat-label>
+    <textarea name="textbox-longEntry" rows="5" [(ngModel)]="data.WholeEntry" [disabled]="!data.ShowWholeEntry" matInput placeholder="Ganzen Eintrag eingeben"></textarea>
+  </mat-form-field>
+  <br>
+
+<!--
+  <button class="add-image-button" type="button" mat-raised-button color="primary" (click)="imageInputClicked()">Bild-Datei hinzufügen</button>
+  <input class="imageInput" #imageInput (change)="selectPicture($event)" enctype="multipart/form-data" id="image-upload"
+         name="image" type="file" accept="image/png, image/jpeg" multiple required>
+  <div *ngIf="selectedPicture == undefined">Hinzugefügte Bild-Datei: Noch keine.</div>
+  <div *ngIf="selectedPicture != undefined">Hinzugefügte Datei: {{selectedPicture?.name}}</div>-->
+
+  <br>
+  <div class="button-row">
+    <button class="publish-button" mat-raised-button color="primary" type="submit">Bestätigen</button>
+    <button class="cancle-btn" (click)="leaveEditMode()" mat-raised-button mat-dialog-close >Abbrechen</button>
+    <div *ngIf="this.entryAdded == false">
+    </div>
+  </div>
+</form>
+
+
+
+

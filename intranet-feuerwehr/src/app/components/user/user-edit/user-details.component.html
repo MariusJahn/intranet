@@ -1,0 +1,52 @@
+<h1>Benutzer bearbeiten</h1>
+<form (submit)="editUser($event)">
+
+  <form class="id-field" appearance="inline">
+    <label>ID</label>
+    <input matInput [(ngModel)]="data.MitarbeiterID" name="id" id="id" type="number" readonly>
+  </form><br>
+
+    <mat-form-field class="vorname-field" appearance="outline">
+  <mat-label>Vorname</mat-label>
+  <input matInput [(ngModel)]="data.Vorname" name="vorname" id="vorname" placeholder="Vorname eingeben" type="text"><br>
+  </mat-form-field>
+
+  <mat-form-field class="nachname-field" appearance="outline">
+    <mat-label>Nachname</mat-label>
+    <input matInput [(ngModel)]="data.Nachname" name="nachname" id="nachname" placeholder="Nachname eingeben"type="text">
+  </mat-form-field><br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Telefon</mat-label>
+    <input matInput [(ngModel)]="data.Telefon" name="telefon" id="telefon" placeholder="Telefonnummer eingeben">
+  </mat-form-field><br>
+
+
+  <mat-form-field class="username-field" appearance="outline">
+    <mat-label>Benutzername</mat-label>
+    <input matInput [(ngModel)]="data.Benutzername" name="username" id="username" placeholder="Benutzername eingeben" type="text">
+  </mat-form-field><br>
+
+  <mat-form-field class="email-field" appearance="outline">
+    <mat-label>E-Mail</mat-label>
+    <input size="50" matInput [(ngModel)]="data.Email" name="email" id="email" placeholder="z.B.: max.mustermann@gelsenkirchen.de">
+  </mat-form-field><br>
+
+
+  <mat-form-field class="pw-field" appearance="outline">
+    <mat-label>Neues Passwort (optional)</mat-label>
+    <input matInput [(ngModel)]="this.newPassword" name="password" id="password" placeholder="Neues Passwort eingeben" type="password">
+  </mat-form-field>
+
+  <mat-form-field class="pw-control-field" appearance="outline" floatLabel="never">
+    <input matInput  [(ngModel)]="this.newPasswordControl "name="passwordControl" id="passwordControl" placeholder="Passwort wiederholen" type="password">
+  </mat-form-field>
+
+
+  <div class="button-row">
+    <button class="submit-details-button" mat-raised-button mat-dialog-close color="primary" type="submit">Bestätigen</button>
+    <button class="cancle-btn" mat-raised-button mat-dialog-close (click)="leaveEditMode()">Abbrechen</button>
+  </div>
+
+</form>
+

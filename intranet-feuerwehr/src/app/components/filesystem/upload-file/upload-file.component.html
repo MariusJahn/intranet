@@ -1,0 +1,39 @@
+<h1>Neue Datei hochladen</h1>
+<div class="upload_container">
+  <form (submit)="uploadFile($event)">
+
+    <div class="docu-input-container">
+    <mat-form-field class="category-field" appearance="outline">
+      <mat-label>Kategorie:</mat-label>
+      <input matInput [(ngModel)]="this.data.category.name" name="category" id="category" readonly>
+    </mat-form-field>
+
+    <mat-form-field class="vorgaenger-field" appearance="outline">
+      <mat-label>Vorgänger</mat-label>
+      <mat-select [disableOptionCentering]="true" #select1 [(ngModel)]="parent" name="parent" size="5" placeholder="Vorgänger">
+        <mat-select-filter *ngIf="select1.focused" [array]="this.data.titles" (filteredReturn)="filteredList =$event"></mat-select-filter>
+        <mat-option *ngFor="let title of filteredList" [value]="title">
+          {{title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+
+    <br>
+    <button class="upload_button"type="button" mat-raised-button color="primary" (click)="fileInputClicked()">Dokument auswählen</button>
+    <br>
+    <div class="docu-hint">
+    <mat-hint>Zugelassene Dateihänge:  *.pdf/docx/xlsx/txt/jpg/jpeg/png</mat-hint>
+    </div>
+    <br>
+    <input class="fileInput" (change)="selectFile($event)" enctype="multipart/form-data" id="fileUpload" name="document" type="file">
+    <div *ngIf="selectedFile == undefined">Hinzugefügte Datei: Noch keine.</div>
+    <div *ngIf="selectedFile != undefined">Hinzugefügte Datei: {{selectedFile?.name}}</div>
+    <br>
+
+    <div class="button-row">
+      <button mat-raised-button mat-dialog-close class="button-wrapper" color="primary" type="submit">Hochladen!</button>
+      <button class="cancle-btn" mat-raised-button mat-dialog-close (click)="leaveCreateDocument()">Abbrechen</button>
+    </div>
+  </form>
+</div>

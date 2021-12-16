@@ -1,0 +1,42 @@
+.button-row {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+
+.nachname-field {
+  margin-left: 15px;
+}
+
+.abteilung-field {
+  width: 100%;
+}
+
+.pw-control-field {
+  margin-left: 15px;
+}
+
+.email-field {
+  width: 100%;
+}
+
+.username-field {
+  width: 100%;
+}
+
+
+.cancle-btn {
+  margin: 15px;
+}
+
+.cancle-btn:hover {
+  background-color: #9f9f9f;
+  color: white;
+  transition: 0.5s;
+}
+
+.submit-details-button:hover {
+  background-color: #14947b;
+  transition: 0.5s;
+}

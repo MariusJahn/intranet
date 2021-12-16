@@ -1,0 +1,48 @@
+.parent-container {
+  margin-bottom: 15px;
+  float: left;
+  width: 200px;
+}
+
+.parent-button-container {
+  margin-top: 10px;
+  float: left;
+  height: 77px;
+}
+
+.category-field{
+  margin-top:  15px;
+}
+
+.action-icon {
+  color: #4C4F4E;
+}
+
+.cancle-btn {
+  margin-top: 20px;
+  margin: 15px;
+  padding: 3px 20px 3px 20px;
+}
+
+.button-wrapper {
+  background-color: #1abc9c;
+  box-shadow: 0 3px 5px 0 rgba(15, 22, 33, 0.2);
+  padding: 3px 20px 3px 20px;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+  margin-bottom: 20px;
+}
+
+.cancle-btn:hover {
+  background-color: #9f9f9f;
+  color: white;
+  transition: 0.5s;
+}
+
+.button-wrapper:hover{
+  background-color: #14947b;
+  cursor: pointer;
+  transition: 0.5s;
+}

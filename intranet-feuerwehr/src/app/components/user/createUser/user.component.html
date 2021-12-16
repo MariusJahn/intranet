@@ -1,0 +1,75 @@
+
+<h1>Neuen Benutzer registrieren</h1>
+<form (submit)="registerUser($event)">
+
+  <mat-form-field class="vorname-field" appearance="outline">
+    <mat-label>Vorname</mat-label>
+    <input matInput [(ngModel)]="vorname" name="vorname" id="vorname" placeholder="Vorname eingeben" type="text"><br>
+  </mat-form-field>
+
+  <mat-form-field class="nachname-field" appearance="outline">
+    <mat-label>Nachname</mat-label>
+    <input matInput [(ngModel)]="nachname" name="nachname" id="nachname" placeholder="Nachname eingeben" type="text"><br>
+  </mat-form-field><br>
+
+
+  <mat-form-field appearance="outline">
+    <mat-label>Telefon</mat-label>
+    <input matInput [(ngModel)]="telefon" name="telefon" id="telefon" placeholder="Telefonnummer eingeben"><br>
+  </mat-form-field><br>
+
+  <!--Hier entsteht eine Multi-Select-Box mit Abteilungsdaten aus DB-->
+  <mat-form-field class="department-field" appearance="outline">
+    <mat-label>Abteilung</mat-label>
+    <mat-select [formControl]="departmentFormControl" multiple>
+      <mat-option *ngFor="let department of departments" [value]="department.abteilungID"> <!--#matOption (click)="click(matOption.selected)" prüfen ob selected-->
+        {{department.name}}
+      </mat-option>
+    </mat-select>
+    <mat-hint>Mehrfachauswahl</mat-hint>
+  </mat-form-field>
+
+
+  <!--Hier entsteht eine Multi-Select-Box mit Rollendaten aus DB-->
+  <mat-form-field class="role-field" appearance="outline">
+    <mat-label>Rolle</mat-label>
+    <mat-select [formControl]="rolesFormControl" multiple>
+      <mat-option *ngFor="let role of roles" [value]="role.roleID"> <!--#matOption (click)="click(matOption.selected)" prüfen ob selected-->
+        {{role.name}}
+      </mat-option>
+    </mat-select>
+    <mat-hint>Mehrfachauswahl</mat-hint>
+  </mat-form-field>
+  <br>
+  <br>
+
+  <mat-form-field class="username-field" appearance="outline">
+    <mat-label>Benutzername</mat-label>
+    <input matInput [(ngModel)]="username" name="username" id="username" placeholder="Benutzername eingeben" type="text" required><br>
+  </mat-form-field><br>
+
+<mat-form-field class="email-field" appearance="outline">
+  <mat-label>E-Mail</mat-label>
+  <input matInput [(ngModel)]="email" name="email" id="email" placeholder="z.B.: max.mustermann@gelsenkirchen.de" required><br>
+</mat-form-field><br>
+
+<div>
+  <mat-form-field class="pw-field" appearance="outline">
+    <mat-label>Passwort</mat-label>
+    <input matInput [(ngModel)]="password" name="password" type="password" id="password" placeholder="Passwort eingeben" required>
+    <mat-hint>Mind. 8 Zeichen, davon mind. eine Ziffer, Groß - und Kleinbuchstaben</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="pw-control-field" appearance="outline">
+    <input matInput [(ngModel)]="passwordControl" name="passwordControl" type="password" id="passwordControl" placeholder="Passwort wiederholen" required>
+  </mat-form-field>
+
+</div><br>
+
+
+<div class="button-row">
+  <button class="register-button" mat-raised-button mat-dialog-close color="primary" type="submit">Registrieren</button>
+  <button class="cancle-btn" (click)="leaveCreateMode()" mat-raised-button mat-dialog-close >Abbrechen</button>
+</div>
+</form>
+

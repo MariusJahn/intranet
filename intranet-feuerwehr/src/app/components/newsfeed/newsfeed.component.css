@@ -1,0 +1,157 @@
+.home {
+  display: grid;
+  grid-template-areas: "newsfeed-background calender-background"
+                       "newsfeed-background carousel-background";
+  grid-template-columns: minmax(20%, 1200px) minmax(50px,300px);
+  grid-template-rows: 400px 1fr;
+  gap: 0px 80px;
+}
+
+@media (max-width: 1200px){
+  .home {
+    grid-template-areas: "newsfeed-background"
+                         "newsfeed-background";
+    grid-template-columns: 100%;
+    gap: 0;
+  }
+  .calender-background {
+    display: none;
+  }
+  .carousel-background {
+    display: none;
+  }
+}
+
+.newsfeed-background {
+  grid-area: newsfeed-background;
+
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+
+  max-width: 1200px;
+  background-color: white;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  padding: 38px 60px 40px 60px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.calender-background {
+  grid-area: calender-background;
+  height: min-content;
+
+  background-color: white;
+  border-radius: 5px;
+}
+
+.carousel-background {
+  grid-area: carousel-background;
+  height: min-content;
+}
+
+.newsfeed-headline {
+  height: 100%;
+  width: 100%;
+
+  color: #656565;
+  font-size: 25px;
+}
+
+.description-text {
+  word-break: break-word;
+  max-width: 800px;
+}
+
+.news__button {
+  height: 100%;
+  width: 100%;
+
+  margin-top: 38px;
+}
+
+.news__cards {
+  padding: 38px 0px 0px 0px;
+}
+
+.example-card {
+  height: 100%;
+  max-width: 800px;
+  background-color: white;
+  margin-bottom: 30px;
+  padding: 38px 40px 40px 40px;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  border-radius: 5px;
+  border: 2px solid #e6e6e6;
+}
+
+.textarea {
+  caret-color: royalblue;
+  width: 60em;
+  height: 15em;
+  border: 1px solid #cccccc;
+  padding: 0.5em;
+  font-family: Tahoma, sans-serif;
+}
+
+.textarea:focus {
+  background: lightcyan;
+}
+
+.delete-button_icon {
+  color: #4c4f4e;
+}
+
+.newsfeed-add-button {
+  background-color: #1abc9c;
+  box-shadow: 0 3px 5px 0 rgba(15, 22, 33, 0.2);
+  padding: 3px 20px 3px 20px;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.newsfeed-add-button:hover {
+  background-color: #14947b;
+}
+
+.container-delete-button {
+  display: block !important;
+}
+
+.newsfeed-editor-container {
+  margin-top: 50px;
+  padding: 38px 15px 0px 50px;
+}
+
+.newsfeed-editor-container--buttons {
+  margin-top: 50px;
+  padding: 0px 15px 0px 50px;
+}
+
+.newsfeed-editor-headline {
+  color: #4c4f4e;
+}
+
+.newsfeed-button {
+  background-color: #1abc9c;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  margin-right: 30px;
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.newsfeed__card-image {
+  border-radius: 5px;
+}
+
+.mat-paginator {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+}
+
