@@ -10,6 +10,13 @@ Inherits:
 - Storage for Documents
 - Quicklinks Area
 
+## Technologys
+
+- Angular
+- NodeJS
+- ExpressJs
+- MariaDB
+
 ## Setup
 
 - npm ci in frontend und backend
