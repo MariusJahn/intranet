@@ -1,0 +1,44 @@
+.newsfeed-headline {
+  height: 100%;
+  width: 100%;
+
+  color: #656565;
+  font-size: 25px;
+}
+
+.news__cards {
+  width: 100%;
+}
+
+.whole-card {
+  height: 100%;
+  max-width: 800px;
+  background-color: white;
+  margin-bottom: 30px;
+  padding: 38px 40px 40px 40px;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  border-radius: 5px;
+  border: 2px solid #e6e6e6;
+}
+
+.whole-text {
+  word-break: break-word;
+  max-width: 800px;
+}
+
+.textarea {
+  caret-color: royalblue;
+  width: 60em;
+  height: 15em;
+  border: 1px solid #cccccc;
+  padding: 0.5em;
+  font-family: Tahoma, sans-serif;
+}
+
+.textarea:focus {
+  background: lightcyan;
+}
+
+.newsfeed__card-image {
+  border-radius: 5px;
+}

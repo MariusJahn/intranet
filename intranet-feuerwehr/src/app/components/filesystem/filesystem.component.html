@@ -1,0 +1,99 @@
+<div class="filesystem">
+    <mat-form-field appearance="fill" class="select-category" style="">
+    <mat-label style="font-size: 16px;  font-weight: bolder">
+      Kategorie:
+      <mat-select [formControl]="categoryFormControl" (ngModelChange)="updateTable();">
+        <mat-option *ngFor="let category of userDepartment" [value]="category.value">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-label>
+  </mat-form-field>
+
+
+
+  <div class="document-options">
+    <mat-form-field class="search-form-field" floatLabel="never" appearance="outline">
+      <input class="search-form-field-input" matInput [(ngModel)]="searchKey" aria-label="Search" placeholder="Suchen" autocomplete="off" (keyup)="applyFilter($event)">
+      <mat-icon matPrefix>search</mat-icon>
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="this.searchKey" (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="button-wrapper" (click)="createDokumentDialog()">
+      <mat-icon>add</mat-icon> Neues Dokument
+    </button>
+
+
+
+  </div>
+
+  <div class="filesystem-overview">
+    <div class="filesystem-table-container">
+      <table mat-table [dataSource]="docDataSource" matSort >
+        <!-- Titel Zeile -->
+        <ng-container matColumnDef="title">
+          <th class="filesystem__subtitle" mat-header-cell *matHeaderCellDef mat-sort-header>Titel</th>
+          <td mat-cell *matCellDef="let row">{{row.title}}</td>
+        </ng-container>
+
+        <!-- Gültigkeit Zeile -->
+        <ng-container matColumnDef="validity">
+          <th class="filesystem__subtitle" mat-header-cell *matHeaderCellDef mat-sort-header>Gültigkeit</th>
+          <td mat-cell *matCellDef="let row"> {{row.validity}}</td>
+        </ng-container>
+
+        <!-- Erstelldatum Zeile -->
+        <ng-container matColumnDef="creationDate">
+          <th class="filesystem__subtitle" mat-header-cell *matHeaderCellDef mat-sort-header>Erstelldatum</th>
+          <td mat-cell *matCellDef="let row">{{row.creationDate}}</td>
+        </ng-container>
+
+        <!-- Änderungsdatum Zeile -->
+        <ng-container matColumnDef="alterationDate">
+          <th class="filesystem__subtitle" mat-header-cell *matHeaderCellDef mat-sort-header>Änderungsdatum</th>
+          <td mat-cell *matCellDef="let row">{{row.alterationDate}}</td>
+        </ng-container>
+
+        <!-- Vorgänger Zeile -->
+        <ng-container matColumnDef="parent">
+          <th class="filesystem__subtitle" mat-header-cell *matHeaderCellDef mat-sort-header>Vorgänger</th>
+          <td mat-cell *matCellDef="let row">
+            <div *ngIf="row.parent === ''">kein Vorgänger</div>
+            <div *ngIf="row.parent !== ''">
+              {{row.parent}}
+            </div>
+          </td>
+        </ng-container>
+
+        <!-- Aktionen -->
+        <ng-container matColumnDef="actions">
+          <th class="filesystem__subtitle" mat-header-cell *matHeaderCellDef>Aktionen</th>
+          <td mat-cell *matCellDef="let row">
+            <!-- Download dieses Dokument(in row), über ID -->
+            <button  mat-icon-button matTooltip="Dokument herunterladen" [matTooltipPosition]="tooltipPosition">
+              <mat-icon class="action-icon" (click)="this.download(row.documentID)">save_alt</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Versionierung bearbeiten" [matTooltipPosition]="tooltipPosition">
+              <mat-icon class="action-icon"  (click)="editDokumentDialog(row)">edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+      <mat-paginator #paginator
+                     [pageIndex]="0"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[10, 20, 50, 100]"
+                     (page)="handlePage()"
+                     showFirstLastButtons>
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+

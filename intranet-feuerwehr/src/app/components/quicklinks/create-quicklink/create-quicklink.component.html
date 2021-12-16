@@ -1,0 +1,19 @@
+<!-- Quicklinks Rechte Prüfung! *ngIf="newsfeedRight" muss in die erste div noch rein-->
+  <h1>Neuer Quicklink</h1>
+
+  <div class="quicklinks__input-container">
+    <mat-form-field class="nachname-field" appearance="outline">
+      <mat-label>Name eingeben</mat-label>
+      <input matInput class="quicklinks__input" (keyup.enter)="confirm()" type="text" [(ngModel)]="newName" placeholder="Name eingeben">
+    </mat-form-field><br>
+
+      <mat-form-field class="nachname-field" appearance="outline">
+        <mat-label>URL eingeben</mat-label>
+        <input matInput class="quicklinks__input" (keyup.enter)="confirm()" type="text" [(ngModel)]="newHref" placeholder="z.B: https://www.gelsenkirchen.de">
+      </mat-form-field><br>
+
+      <button class="quicklinks__button-add-link"(click)="confirm()"> Link hinzufügen </button>
+      <!--<div *ngIf="nachricht != undefined && nachricht != null"> {{nachricht}}</div>
+      hier messageservice rein-->
+
+  </div>

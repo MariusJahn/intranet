@@ -1,0 +1,55 @@
+.app {
+  display: grid; /* Defines the element as a grid container and establishes a new grid formatting context for its contents. */
+  grid-template-areas: "navigation navigation" /* Defines a grid template by referencing the names of the grid areas which are specified with the grid-area property.
+                                                  Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell.
+                                                  The syntax itself provides a visualization of the structure of the grid. */
+                       "sidebar    router-outlet"
+                       "footer     footer";
+  grid-template-columns: 1fr 3fr; /* FR = Einheit, damit es flexibel ist. */
+  grid-template-rows: auto 1fr auto;
+  background-color: #4160a6;
+  grid-gap: 20px 80px;
+
+  height: 100%;
+}
+
+.navigation { /* Klassen definieren String für grid-template-areas */
+  grid-area: navigation;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 0 0 0 20px;
+}
+
+.router-outlet {
+  grid-area: router-outlet;
+  padding: 0 20px 0 0;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* wird angewendet, wenn breite kleiner als 500px ist */
+@media(max-width: 900px) {
+  .app {
+    grid-template-areas: "navigation"
+                         "sidebar"
+                         "router-outlet"
+                         "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-gap: 20px 0;
+  }
+
+  .router-outlet {
+    padding: 0 20px;
+  }
+
+  .sidebar {
+    padding: 0 20px;
+  }
+
+}
+

@@ -1,0 +1,13 @@
+.footer {
+  background-color: white;
+  border-style: none;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #656565;
+}
+
+.footer-button:hover {
+  background-color: #e9e9e9;
+}

@@ -1,0 +1,31 @@
+.quicklinks__input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 500px;
+}
+
+
+.quicklinks__input {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.quicklinks__button-add-link {
+  background-color: #1abc9c;
+  box-shadow: 0 3px 5px 0 rgba(15, 22, 33, 0.2);
+  padding: 5px;
+  margin-top: 10px;
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.quicklinks__button-add-link:hover {
+  background-color: #14947b;
+  cursor: pointer;
+}

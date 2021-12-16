@@ -1,0 +1,86 @@
+.frame {
+  background-color: white;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  padding: 38px 15px 40px 15px ;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.title {
+  color: #656565;
+  font-size: 25px;
+  margin-left: 45px;
+}
+
+.roles-table-container{
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  border-radius: 5px;
+  border: 2px solid #e6e6e6;
+}
+
+.roles-overview {
+  padding: 38px 50px 0px 50px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+
+table {
+  width: 100%;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #e5e5e5;
+}
+
+.mat-table
+{
+  border-radius: 5px;
+  overflow:hidden !important; /*Round corners*/
+  border: 2px solid #e6e6e6;
+}
+
+table tr:last-child td /*To remove the last border*/
+{
+  border-bottom:0 solid
+}
+
+.delete-button_icon {
+  color: #4c4f4e;
+}
+
+.button-wrapper--icon {
+  position: absolute;
+  padding-right: 10px;
+}
+
+.button-wrapper--text {
+  margin-left: 30px;
+}
+
+.options {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.save-button {
+  background-color: #1abc9c;
+  box-shadow: 0 3px 5px 0 rgba(15,22,33,0.2);
+  margin-top: 30px;
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  float: left;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #14947b;
+  transition: 0.5s;
+}

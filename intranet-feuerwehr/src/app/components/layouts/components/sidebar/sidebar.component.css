@@ -1,0 +1,19 @@
+.sidebar {
+  display: grid;
+  grid-template-areas: "login"
+                       "register"
+                       "quicklinks";
+  grid-template-rows: min-content min-content;
+}
+
+.login {
+  grid-area: login;
+}
+
+.register {
+  grid-area: register;
+}
+
+.quicklinks {
+  grid-area: quicklinks;
+}

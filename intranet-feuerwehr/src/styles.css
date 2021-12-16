@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+/* Temporary Styles */
+
+@import './main.css';
+
+.container-outer {
+  border: solid 1px black;
+  padding: 10px;
+}
+.container {
+  border: solid 1px black;
+  padding: 10px;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #4160a6;
+}
+
+body { margin: 0; }
+
+/* Muss an dieser Stelle früh genug den Style der Searchbox von der Benutzerverwaltung beeinflussen,
+damit diese die gleiche Höhe erhält wie der Button daneben.
+ */
+
+
+/* Für MatDialog, blurry hintergrund */
+.backdropBackground {
+  filter: blur(8px);
+  background-color: white;
+  opacity: 0.5 !important;
+}
+
+.toast-container .ngx-toastr {
+  border-radius: 5px !important;
+  padding: 40px !important;
+  /*opacity: 0.9 !important;*/
+  text-align: center !important;
+
+}
+
+.toast-top-right {
+  top: 130px !important;
+}
+
+.toast-title {
+  font-size: 20px;
+
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.toast-message {
+  font-size: 18px;
+}
+
+
+.toast-error {
+  background-color: brown !important;
+}
+
+
+mat-form-field.search-form-field .mat-form-field-infix {
+  border-top: 0px !important;
+}
+
+mat-form-field .mat-form-field-outline-thick {
+  top: 0;
+}
+
+mat-form-field > div > .mat-form-field-flex .mat-form-field-infix {
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+
+/*
+Diese drei Klassen überschreiben die Standartwerte von mat-Elementen des Newsfeeds.
+Das ist notwendig, um diese an das Design anpassen zu können.
+ */
+
+.mat-card-image {
+  width: calc(100%) !important;
+  border-radius: 5px;
+  margin: 0px 0px 16px 0px !important;
+  max-width: 800px;
+}
+
+.mat-card-image:first-child {
+  margin-top: 0px !important;
+}
+
+.mat-card-header-text {
+  margin: 0px !important;
+}
+
+.mat-form-field-flex {
+  width: 100%;
+}
+
+checkbox ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #005691;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+  background-color: #005691 !important; /* Red background for example */
+}
+
+::ng-deep .mat-primary .mat-pseudo-checkbox-checked {
+  background: green !important;
+}
+
+.mat-calendar-body-today{
+  color: #1abc9c !important;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border-color: #1abc9c;
+}
+
+.mat-calendar-body-cell-content {
+  background: white !important;
+  cursor: default;
+}
+
+.carousel {
+  border-radius: 5px;
+}
+
+.mat-sort-header-button {
+  font-size: 12pt !important;
+}
+
+.mat-header-cell {
+  font-size: 12pt !important;
+}

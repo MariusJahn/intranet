@@ -1,0 +1,25 @@
+<div>
+  <h1>Rolle erstellen</h1>
+</div>
+
+<form (submit)="addRole($event)">
+
+  <mat-form-field class="name-field" appearance="outline">
+    <mat-label>Rolle</mat-label>
+    <div>
+      <input matInput [(ngModel)]="newRoleName" name="give-name" id="give-name" type="text" placeholder="Rollennamen eingeben"><br>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field class="beschreibung-field" appearance="outline">
+    <mat-label>Beschreibung</mat-label>
+    <div>
+      <input matInput [(ngModel)]="newRoleDesciption" name="beschreibung" id="beschreibung" type="text" placeholder="Rollenbeschreibung eingeben"><br>
+    </div>
+  </mat-form-field><br>
+
+  <div class="button-row">
+    <button class="submit-role-button" mat-raised-button mat-dialog-close color="primary" type="submit" >Bestätigen</button>
+    <button class="cancle-btn" (click)="leaveCreateMode()" mat-raised-button mat-dialog-close >Abbrechen</button>
+  </div>
+</form>

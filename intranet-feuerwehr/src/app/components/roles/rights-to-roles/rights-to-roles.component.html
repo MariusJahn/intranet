@@ -1,0 +1,91 @@
+<div class="frame">
+  <p class="title"> Rechtematrix für: {{actualRole.name}}</p>
+
+  <!--<mat-checkbox name="read" labelPosition="before">Alle Rechte</mat-checkbox>
+  <mat-checkbox name="read" labelPosition="before">Alles Lesen</mat-checkbox>
+  <mat-checkbox name="read" labelPosition="before">Alles Schreiben</mat-checkbox>
+  <mat-checkbox name="read" labelPosition="before">Alles Ausführen</mat-checkbox>-->
+
+  <div class="rights-overview">
+    <div class="rights-table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort  >
+        <!-- Recht -->
+
+        <ng-container matColumnDef="right" >
+          <th mat-header-cell *matHeaderCellDef> Beschreibung </th>
+          <td mat-cell *matCellDef="let right let i = index"> {{rights[i].description}} </td>
+        </ng-container>
+
+        <!-- Read Spalte -->
+        <ng-container matColumnDef="read">
+          <th mat-header-cell *matHeaderCellDef matTooltip="Mit diesem Recht darf man z.B. Beiträge lesen oder bestimmte Bereiche sehen" [matTooltipPosition]="tooltipPosition"> Lesen </th>
+          <td mat-cell *matCellDef="let right">
+            <mat-checkbox  name="read" [ngModel]="right.allowRead" [checked]="right.allowRead === 1 || 0"
+                           (change)="$event.checked
+                            ? (right.allowRead =  1)
+                            : (right.allowRead = 0)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <!-- Write Spalte -->
+        <ng-container matColumnDef="write">
+          <th mat-header-cell *matHeaderCellDef matTooltip="Mit diesem Recht darf man hochladen und erstellen" [matTooltipPosition]="tooltipPosition"> Schreiben </th>
+          <td mat-cell *matCellDef="let right">
+            <mat-checkbox  name="write" [ngModel]="right.allowWrite" [checked]="right.allowWrite === 1 || 0"
+                           (change)="$event.checked
+                          ? (right.allowWrite =  1)
+                          : (right.allowWrite = 0)">
+
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <!-- Execute Spalte -->
+        <ng-container matColumnDef="execute">
+          <th mat-header-cell *matHeaderCellDef matTooltip="Mit diesem Recht darf man Programme oder Aktionen benutzen/ausführen" [matTooltipPosition]="tooltipPosition"> Ausführen </th>
+          <td mat-cell *matCellDef="let right">
+            <mat-checkbox  name="execute" [ngModel]="right.allowExecute" [checked]="right.allowExecute === 1 || 0"
+                           (change)="$event.checked
+                         ? (right.allowExecute =  1)
+                         : (right.allowExecute = 0)">
+
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let right; columns: displayedColumns;"></tr>
+
+      </table>
+    </div>
+  </div>
+
+
+  <div class="options">
+
+    <button class="save-button" style="grid-column: 2" type="submit" (click)="save()">
+      <div class="button-wrapper--icon"> <mat-icon class="add-user-icon">done</mat-icon></div>
+      <div class="button-wrapper--text"> Speichern </div>
+    </button>
+    <button class="save-button" style="grid-column: 3" [routerLink]="['/user/rollenverwaltung']" type="submit" value="Submit" >
+      <div class="button-wrapper--icon" (click)="leaveEditMode()"> <mat-icon class="add-user-icon">cancel</mat-icon></div>
+      <div class="button-wrapper--text"> Abbrechen </div>
+    </button>
+  </div>
+
+
+</div>
+
+
+
+
+<!--<ul>
+  <li *ngFor="let rights of rolesAndRights">
+    {{rights.rightID}}:{{rights.allowRead}}:{{rights.allowWrite}}:{{rights.allowExecute}}
+  </li>
+
+  <li *ngFor="let right of rights">
+    {right.name}}
+  </li>
+</ul>-->

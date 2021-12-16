@@ -1,0 +1,22 @@
+<div class="news__cards">
+    <mat-card class="whole-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{newsFeed?.title}}</mat-card-title>
+          <mat-card-subtitle>{{newsFeed?.createdDate}} von: {{newsFeed?.author}}</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+      <div class="newsfeed__card-image">
+        <img mat-card-image [src]='newsFeed?.pictureDataUrl'>
+      </div>
+      <mat-card-content>
+        <p class="whole-text">
+          {{newsFeed?.wholeEntry}}
+        </p>
+        <a [routerLink]="['']" routerLinkActive="router-link-active"> Zurück zur Übersicht...</a>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+

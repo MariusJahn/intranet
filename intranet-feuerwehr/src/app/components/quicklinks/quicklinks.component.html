@@ -1,0 +1,30 @@
+<!-- erstellt Liste aller Quicklinks von Datenbank, Links in neuem Fenster geöffnet, wenn User Admin-Rechte hat, wird
+ihm die Möglichkeit zum Löschen von je einem Link angezeigt -->
+
+<div class="quicklinks">
+  <p class="quicklinks__title">Quicklinks</p>
+
+      <div class="quicklinks__button" *ngIf="isAdmin || allowWriteQuicklink">
+        <button mat-raised-button class="quicklinks-add-button " (click)="createQuicklinkDialog()">
+          <mat-icon>add</mat-icon> Link hinzufügen
+        </button>
+      </div>
+
+        <div class="quicklinks-container" *ngFor="let link of quicklinks">
+
+          <div class="quicklinks__link">
+              <div class="link__text-container" (click)="navigateTo(link.href)">
+                {{link.name}}
+              </div>
+              <div class="delete-button_icon">
+                <button mat-icon-button  *ngIf="isAdmin || allowWriteQuicklink" (click)="deleteQuicklink(link)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+          </div>
+        </div>
+</div>
+
+
+
+
