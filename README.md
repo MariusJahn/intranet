@@ -10,7 +10,7 @@ Inherits:
 - Storage for Documents
 - Quicklinks Area
 
-## Technologys
+## Technologies
 
 - Angular
 - NodeJS
