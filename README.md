@@ -14,7 +14,7 @@ Inherits:
 
 - Angular
 - NodeJS
-- ExpressJs
+- ExpressJS
 - MariaDB
 
 ## Setup
